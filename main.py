@@ -31,4 +31,30 @@ for loop in range(10):
 
 # Query de consultas
 Consulta = Cursor.execute(' SELECT * FROM Minha_Tabela').fetchall()
+
+# Query usando "="
+Consulta = Cursor.execute(
+    '''
+    SELECT * FROM Minha_Tabela
+    WHERE Nome = 'Odemir'
+    '''
+).fetchall()
+
+# Query usando ">"
+Consulta = Cursor.execute(
+    '''
+    SELECT * FROM Minha_Tabela
+    WHERE Idade > 30
+    '''
+).fetchall()
+
+# Query usando BETWEEN
+Consulta = Cursor.execute(
+    '''
+    SELECT * FROM Minha_Tabela
+    WHERE Idade BETWEEN 20 AND 25
+    '''
+).fetchall()
+
 print(Consulta)
+
